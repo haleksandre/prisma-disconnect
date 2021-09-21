@@ -1,0 +1,6 @@
+{
+  "exec": "esr ./src/start.ts",
+  "watch": ["src", "prisma"],
+  "ext": "ts,mjs,js,json,graphql",
+  "ignore": ["src/**/*.spec.ts"]
+}

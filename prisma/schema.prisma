@@ -1,0 +1,38 @@
+datasource db {
+  provider = "postgres"
+  url      = env("POSTGRES_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+generator nexus {
+  provider = "nexus-prisma"
+}
+
+/// The user credentials & common information
+model User {
+  id       String     @id @default(cuid())
+  email    String     @unique
+  username String     @unique
+  password String
+  type     UserType   @default(USER)
+  status   UserStatus @default(INACTIVE)
+
+  @@map(name: "users")
+}
+
+/// The user type
+enum UserType {
+  ADMIN
+  EMPLOYEE
+  USER
+}
+
+/// The user status
+enum UserStatus {
+  ACTIVE
+  INACTIVE
+  BANNED
+}

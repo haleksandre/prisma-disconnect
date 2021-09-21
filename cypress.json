@@ -1,0 +1,6 @@
+{
+  "baseUrl": "http://localhost:4001",
+  "screenshotOnRunFailure": false,
+  "video": false,
+  "responseTimeout": 120000
+}
